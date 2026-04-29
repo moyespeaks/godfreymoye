@@ -1,0 +1,90 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+
+      - name: "hero"
+        label: "🏠 Hero Section (Top of Page)"
+        file: "content/hero.json"
+        fields:
+          - { label: "Your Name (Line 1)", name: "name_line1", widget: "string", default: "GODFREY" }
+          - { label: "Your Name (Line 2 — Gold)", name: "name_line2", widget: "string", default: "MOYE" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Equipping people to live with purpose, clarity, and conviction." }
+          - { label: "Description Paragraph", name: "description", widget: "text", default: "Since 2007, Godfrey Moye has delivered transformative experiences to students, congregations, and organizations." }
+          - { label: "Hero Photo", name: "photo", widget: "image", default: "/images/headshot.jpg" }
+          - { label: "Years of Experience (Stats Bar)", name: "years", widget: "string", default: "18+" }
+          - { label: "Lives Reached (Stats Bar)", name: "lives", widget: "string", default: "1000s" }
+
+      - name: "about"
+        label: "👤 About Section"
+        file: "content/about.json"
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "More Than A Speaker." }
+          - { label: "Paragraph 1", name: "para1", widget: "text" }
+          - { label: "Paragraph 2", name: "para2", widget: "text" }
+          - { label: "Paragraph 3", name: "para3", widget: "text" }
+
+      - name: "reel"
+        label: "🎬 Speaker Reel Video"
+        file: "content/reel.json"
+        fields:
+          - { label: "YouTube Video ID", name: "youtube_id", widget: "string", default: "M-y8gsSJ7mo", hint: "Just the ID from the YouTube URL — e.g. for youtube.com/watch?v=M-y8gsSJ7mo enter: M-y8gsSJ7mo" }
+          - { label: "Section Heading", name: "heading", widget: "string", default: "See Godfrey In Action." }
+          - { label: "Subheading", name: "subheading", widget: "string", default: "Don't take our word for it. Watch what happens when Godfrey walks into a room." }
+
+      - name: "speaking"
+        label: "🎤 Speaking Topics"
+        file: "content/speaking.json"
+        fields:
+          - label: "Audience Cards"
+            name: "cards"
+            widget: "list"
+            fields:
+              - { label: "Audience Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Topics (comma separated)", name: "topics", widget: "string" }
+
+      - name: "program"
+        label: "🎯 Life on Purpose Program"
+        file: "content/program.json"
+        fields:
+          - { label: "Program Title", name: "title", widget: "string", default: "Life on Purpose Program" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Teens Living On Purpose." }
+          - { label: "Description Paragraph 1", name: "para1", widget: "text" }
+          - { label: "Description Paragraph 2", name: "para2", widget: "text" }
+          - { label: "Description Paragraph 3", name: "para3", widget: "text" }
+          - label: "Program Outcomes (bullet list)"
+            name: "outcomes"
+            widget: "list"
+            field: { label: "Outcome", name: "outcome", widget: "string" }
+
+      - name: "testimonials"
+        label: "⭐ Testimonials"
+        file: "content/testimonials.json"
+        fields:
+          - label: "Testimonials"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role / Title", name: "role", widget: "string" }
+              - { label: "Initials (for avatar)", name: "initials", widget: "string" }
+
+      - name: "contact"
+        label: "📞 Contact & Booking Info"
+        file: "content/contact.json"
+        fields:
+          - { label: "Phone Number", name: "phone", widget: "string", default: "(347) 543-5013" }
+          - { label: "Email Address", name: "email", widget: "string", default: "godfrey@godfreymoye.com" }
+          - { label: "Calendly Link", name: "calendly", widget: "string", default: "https://calendly.com/moyespeaks" }
+          - { label: "City / Location", name: "location", widget: "string", default: "New York City, NY" }
+          - { label: "Booking Section Heading", name: "heading", widget: "string", default: "Ready to Bring This Message to Your Room?" }
+          - { label: "Booking Description", name: "description", widget: "text" }

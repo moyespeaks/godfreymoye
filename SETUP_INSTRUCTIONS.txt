@@ -1,0 +1,87 @@
+# GodfreyMoye.com — CMS Setup Instructions
+# Do this ONCE after uploading to Netlify. Takes about 10 minutes.
+
+==============================================
+STEP 1 — Connect to GitHub (saves your edits)
+==============================================
+
+The CMS saves changes to GitHub, which Netlify automatically publishes.
+You need a free GitHub account.
+
+1. Go to github.com → Sign up (free)
+2. Create a new repository called "godfreymoye"
+3. Make it PUBLIC
+4. Upload your entire godfreymoye folder to it
+
+==============================================
+STEP 2 — Connect Netlify to GitHub
+==============================================
+
+1. In Netlify → go to "Site Configuration" → "Build & Deploy"
+2. Click "Link repository" → choose GitHub → select "godfreymoye"
+3. Deploy settings: leave everything as default → click Deploy
+
+==============================================
+STEP 3 — Enable Netlify Identity
+==============================================
+
+1. In Netlify → go to "Identity" tab
+2. Click "Enable Identity"
+3. Under "Registration" → set to "Invite only" (so only YOU can log in)
+4. Scroll down to "Git Gateway" → click "Enable Git Gateway"
+
+==============================================
+STEP 4 — Invite yourself as admin
+==============================================
+
+1. Still in Identity tab → click "Invite users"
+2. Enter your email address
+3. Check your email → click the confirmation link
+4. Set your password
+
+==============================================
+STEP 5 — Log into your CMS
+==============================================
+
+1. Go to: godfreymoye.com/admin
+2. Log in with your email and password
+3. You'll see your full content editor dashboard
+
+==============================================
+WHAT YOU CAN EDIT IN THE CMS
+==============================================
+
+🏠 Hero Section     → Your name, tagline, description, photo, stats
+🎬 Speaker Reel     → Swap YouTube video anytime (just paste new ID)
+👤 About Section    → Your full story paragraphs
+🎤 Speaking Topics  → Audience cards and topic tags
+🎯 LOP Program      → Program description and outcomes list
+⭐ Testimonials     → Add, edit, or remove testimonials anytime
+📞 Contact Info     → Phone, email, Calendly link, location
+
+==============================================
+HOW TO UPDATE A PHOTO
+==============================================
+
+1. Log into godfreymoye.com/admin
+2. Click "Hero Section"
+3. Click the photo field → Upload new image
+4. Click Save → site updates in ~30 seconds
+
+==============================================
+HOW TO SWAP THE YOUTUBE VIDEO
+==============================================
+
+1. Go to your YouTube video
+2. Copy just the ID from the URL
+   Example: youtube.com/watch?v=ABC123 → copy "ABC123"
+3. Log into /admin → click "Speaker Reel"
+4. Paste the ID into the YouTube Video ID field
+5. Save → done
+
+==============================================
+NEED HELP?
+==============================================
+
+If anything breaks or you want a new section added,
+bring it back to Claude and it'll be fixed in minutes.

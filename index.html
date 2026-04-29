@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Godfrey Moye | Speaker · Minister · Mentor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1B2E;
+    --navy-mid: #152338;
+    --gold: #C8A24B;
+    --gold-light: #E8C06A;
+    --electric: #1A7FD4;
+    --white: #F4F1EC;
+    --off-white: #E8E4DC;
+    --gray: #8A8A8A;
+    --dark-gray: #2A2A3A;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(13,27,46,0.98), transparent);
+    transition: background 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(13,27,46,0.98);
+    border-bottom: 1px solid rgba(200,162,75,0.2);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    opacity: 1 !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(26,127,212,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 20% 80%, rgba(200,162,75,0.08) 0%, transparent 60%),
+      linear-gradient(135deg, #0D1B2E 0%, #0A1628 60%, #111830 100%);
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,162,75,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,162,75,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 80px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .eyebrow-line {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+  }
+  .eyebrow-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .hero-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4.5rem, 8vw, 8rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    animation: fadeUp 0.9s ease both;
+  }
+  .hero-name .last { color: var(--gold); display: block; }
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--electric);
+    opacity: 0.9;
+    margin-bottom: 28px;
+    animation: fadeUp 0.9s 0.15s ease both;
+  }
+  .hero-roles {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+    animation: fadeUp 0.9s 0.25s ease both;
+  }
+  .role-pill {
+    padding: 6px 16px;
+    border: 1px solid rgba(200,162,75,0.4);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(244,241,236,0.72);
+    max-width: 500px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.9s 0.35s ease both;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.9s 0.45s ease both;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 16px 36px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1px solid rgba(244,241,236,0.4);
+    color: var(--white);
+    padding: 16px 36px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  /* Hero photo card */
+  .hero-card {
+    position: relative;
+    animation: fadeUp 0.9s 0.2s ease both;
+  }
+  .hero-card-inner {
+    position: relative;
+    background: var(--navy-mid);
+    border: 1px solid rgba(200,162,75,0.25);
+    overflow: hidden;
+  }
+  .hero-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .hero-card-badge {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 14px 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 1.3;
+    z-index: 3;
+  }
+  .card-accent {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 60px;
+    height: 60px;
+    border-top: 3px solid var(--gold);
+    border-left: 3px solid var(--gold);
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    position: relative;
+    background: rgba(200,162,75,0.06);
+    border-top: 1px solid rgba(200,162,75,0.15);
+    border-bottom: 1px solid rgba(200,162,75,0.15);
+    padding: 32px 0;
+  }
+  .stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(244,241,236,0.5);
+    margin-top: 4px;
+  }
+  .stat-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(200,162,75,0.2);
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 0; }
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .section-label span {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(200,162,75,0.2);
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+  }
+  .section-title em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(244,241,236,0.65);
+    max-width: 560px;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--navy-mid); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(244,241,236,0.72);
+    margin-bottom: 20px;
+  }
+  .about-text p strong { color: var(--gold); font-weight: 600; }
+  .since-badge {
+    display: inline-block;
+    background: rgba(200,162,75,0.1);
+    border: 1px solid rgba(200,162,75,0.3);
+    padding: 8px 18px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 8px;
+  }
+  .pillar {
+    background: rgba(13,27,46,0.8);
+    padding: 28px 24px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
+    cursor: default;
+  }
+  .pillar:hover {
+    border-color: var(--gold);
+    background: rgba(200,162,75,0.06);
+  }
+  .pillar-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .pillar h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .pillar p {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+    color: rgba(244,241,236,0.5) !important;
+    margin: 0 !important;
+  }
+
+  /* ── SPEAKING ── */
+  .speaking { background: var(--navy); }
+  .speaking-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .audience-card {
+    background: var(--navy-mid);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: default;
+  }
+  .audience-card:hover { transform: translateY(-4px); }
+  .audience-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .audience-card:hover::before { transform: scaleX(1); }
+  .audience-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: rgba(200,162,75,0.12);
+    line-height: 1;
+    position: absolute;
+    top: 20px; right: 24px;
+  }
+  .audience-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .audience-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .audience-card p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: rgba(244,241,236,0.6);
+    margin-bottom: 24px;
+  }
+  .topic-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .topic-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(200,162,75,0.1);
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  /* ── PROGRAM ── */
+  .program { background: var(--navy-mid); }
+  .program-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .program-visual {
+    position: relative;
+  }
+  .program-card-main {
+    background: linear-gradient(135deg, var(--electric) 0%, #0D5FA8 100%);
+    padding: 52px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .program-card-main::after {
+    content: 'LOP';
+    position: absolute;
+    bottom: -20px; right: -10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8rem;
+    color: rgba(255,255,255,0.07);
+    line-height: 1;
+  }
+  .program-card-main h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+  .program-card-main p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.88;
+    margin-bottom: 28px;
+  }
+  .program-outcomes {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+  .program-outcomes li {
+    padding: 8px 0;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .program-outcomes li::before {
+    content: '→';
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+  }
+  .program-accent {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 40px; height: 40px;
+    border-top: 2px solid rgba(255,255,255,0.3);
+    border-right: 2px solid rgba(255,255,255,0.3);
+  }
+  .program-card-sub {
+    background: rgba(200,162,75,0.08);
+    border: 1px solid rgba(200,162,75,0.2);
+    padding: 24px 28px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .sub-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+  .sub-text h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .sub-text p {
+    font-size: 0.78rem;
+    color: rgba(244,241,236,0.55);
+    line-height: 1.5;
+  }
+  .program-content .section-title { margin-bottom: 24px; }
+  .program-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(244,241,236,0.68);
+    margin-bottom: 16px;
+  }
+  .ikigai-note {
+    margin-top: 28px;
+    padding: 20px 24px;
+    border-left: 3px solid var(--gold);
+    background: rgba(200,162,75,0.05);
+  }
+  .ikigai-note p {
+    font-size: 0.85rem;
+    color: rgba(244,241,236,0.7);
+    margin: 0;
+    font-style: italic;
+  }
+  .ikigai-note strong { color: var(--gold); font-style: normal; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--navy); }
+  .testimonials-header { margin-bottom: 60px; }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .testimonial-card {
+    background: var(--navy-mid);
+    padding: 40px 32px;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  .testimonial-card:hover { transform: translateY(-4px); }
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 0.7;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .testimonial-card blockquote {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(244,241,236,0.82);
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(200,162,75,0.15);
+  }
+  .author-avatar {
+    width: 40px; height: 40px;
+    background: rgba(200,162,75,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .author-name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--white);
+    display: block;
+  }
+  .author-role {
+    font-size: 0.72rem;
+    color: rgba(244,241,236,0.45);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── BOOKING CTA ── */
+  .booking {
+    background: linear-gradient(135deg, #0A1628 0%, var(--navy-mid) 50%, #0A1628 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .booking::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,162,75,0.07) 0%, transparent 70%);
+  }
+  .booking-inner {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .booking-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: block;
+  }
+  .booking .section-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    margin-bottom: 20px;
+  }
+  .booking-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(244,241,236,0.65);
+    margin-bottom: 48px;
+  }
+  .booking-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-top: 32px;
+    border-top: 1px solid rgba(200,162,75,0.15);
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: rgba(244,241,236,0.55);
+  }
+  .contact-item a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .contact-item a:hover { color: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: rgba(0,0,0,0.4);
+    border-top: 1px solid rgba(200,162,75,0.1);
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+  }
+  .footer-logo span { color: var(--gold); }
+  footer p {
+    font-size: 0.72rem;
+    color: rgba(244,241,236,0.3);
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 0.72rem;
+    color: rgba(244,241,236,0.35);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── REEL ── */
+  .reel {
+    background: #080F1A;
+    position: relative;
+    overflow: hidden;
+  }
+  .reel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(26,127,212,0.08) 0%, transparent 70%);
+  }
+  .reel-inner {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 48px;
+    text-align: center;
+  }
+  .reel-header {
+    margin-bottom: 48px;
+  }
+  .reel-header .section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+  .reel-header .section-subtitle {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    background: #000;
+    border: 1px solid rgba(200,162,75,0.2);
+    overflow: hidden;
+  }
+  .video-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--electric), var(--gold));
+    z-index: 2;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  .reel-caption {
+    margin-top: 24px;
+    font-size: 0.78rem;
+    color: rgba(244,241,236,0.35);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero-content { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; }
+    .hero-card { order: -1; max-width: 320px; margin: 0 auto; }
+    .stats-inner { padding: 0 24px; gap: 12px; }
+    .stat-num { font-size: 2rem; }
+    .section-inner { padding: 0 24px; }
+    .about-grid, .program-grid { grid-template-columns: 1fr; gap: 40px; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr; }
+    .speaking-header { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; padding: 24px; }
+    .contact-row { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">GODFREY<span>MOYE</span></a>
+  <ul class="nav-links">
+    <li><a href="#reel">Watch</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#booking" class="nav-cta">Book Godfrey</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Speaker · Minister · Mentor</span>
+      </div>
+      <h1 class="hero-name">
+        GODFREY
+        <span class="last">MOYE</span>
+      </h1>
+      <p class="hero-tagline">Equipping people to live with purpose, clarity, and conviction.</p>
+      <div class="hero-roles">
+        <span class="role-pill">Motivational Speaker</span>
+        <span class="role-pill">Youth Minister</span>
+        <span class="role-pill">Mentor</span>
+        <span class="role-pill">Actor</span>
+      </div>
+      <p class="hero-desc">
+        Since 2007, Godfrey Moye has delivered transformative experiences to students, congregations, and organizations — combining the precision of a trained actor, the depth of a minister, and the heart of a mentor who has been in the room.
+      </p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn-primary">Book a Speaking Engagement</a>
+        <a href="#reel" class="btn-outline">▶ Watch the Reel</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-inner">
+        <div class="card-accent"></div>
+        <div class="hero-photo-placeholder">
+          <img src="images/headshot.jpg" alt="Godfrey Moye — Speaker, Minister, Mentor" />
+        </div>
+        <div class="hero-card-badge">
+          18+ YEARS<br>IMPACT
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-num">18+</span>
+      <span class="stat-label">Years of Impact</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">1000s</span>
+      <span class="stat-label">Lives Reached</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">NYC</span>
+      <span class="stat-label">Based & Available Nationally</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Integrated Vocations</span>
+    </div>
+  </div>
+</div>
+
+<!-- REEL -->
+<section class="reel" id="reel">
+  <div class="section-inner reel-inner">
+    <div class="reel-header reveal">
+      <div class="section-label" style="justify-content:center;"><span>Speaker Reel</span></div>
+      <h2 class="section-title">See Godfrey <em>In Action.</em></h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Don't take our word for it. Watch what happens when Godfrey walks into a room.</p>
+    </div>
+    <div class="video-wrapper reveal">
+      <iframe
+        src="https://www.youtube.com/embed/M-y8gsSJ7mo?rel=0&modestbranding=1&color=white"
+        title="Godfrey Moye — Speaker Reel"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="reel-caption reveal">Speaker Reel · Godfrey Moye · New York City</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label"><span>The Story</span></div>
+        <h2 class="section-title">More Than A <em>Speaker.</em></h2>
+        <span class="since-badge">Since 2007</span>
+        <p>
+          Godfrey Moye doesn't just speak — he <strong>enters the room differently.</strong> As an actor trained by the Upright Citizens Brigade, a licensed minister, and a mentoring program founder, he brings a rare combination: someone who understands story, knows Scripture, and has actually walked alongside the people he speaks to.
+        </p>
+        <p>
+          Based in New York City, Godfrey serves as Youth Minister at Lower Manhattan Community Church, where he leads the LMY youth group and runs the <strong>Life on Purpose Program</strong> — a mentoring initiative for teens built around self-discovery, cooperative learning, and intentional living.
+        </p>
+        <p>
+          His approach isn't motivational fluff. It's grounded in <strong>precision, preparation, and presence</strong> — the same qualities that make an actor compelling, a preacher powerful, and a mentor trustworthy.
+        </p>
+      </div>
+      <div class="pillars reveal">
+        <div class="pillar">
+          <span class="pillar-icon">🎭</span>
+          <h3>The Actor</h3>
+          <p>UCB-trained. Home studio. Every word chosen, every moment earned.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">✝️</span>
+          <h3>The Minister</h3>
+          <p>Youth Minister at LMCC. Preacher. Theologian. Discipler of the next generation.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🎯</span>
+          <h3>The Speaker</h3>
+          <p>Stages from schools to churches to conferences — always with contagious enthusiasm.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🤝</span>
+          <h3>The Mentor</h3>
+          <p>One-on-one discipleship. Counseling. Building the Life on Purpose Program from the ground up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section class="speaking" id="speaking">
+  <div class="section-inner">
+    <div class="speaking-header reveal">
+      <div>
+        <div class="section-label"><span>Speaking Topics</span></div>
+        <h2 class="section-title">The Right Voice<br>for <em>Every Room.</em></h2>
+      </div>
+      <div class="section-subtitle">
+        From school assemblies to faith conferences to corporate events — Godfrey tailors every message to the audience in front of him.
+      </div>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card reveal">
+        <span class="audience-num">01</span>
+        <span class="audience-icon">🏫</span>
+        <h3>Schools &amp; Youth Programs</h3>
+        <p>Assemblies, class visits, and program residencies that actually move students. Not just a talk — an experience that lingers in the hallway.</p>
+        <div class="topic-tags">
+          <span class="topic-tag">Identity</span>
+          <span class="topic-tag">Purpose</span>
+          <span class="topic-tag">Decision-Making</span>
+          <span class="topic-tag">Resilience</span>
+        </div>
+      </div>
+      <div class="audience-card reveal">
+        <span class="audience-num">02</span>
+        <span class="audience-icon">⛪</span>
+        <h3>Churches &amp; Faith Organizations</h3>
+        <p>Youth ministry, guest preaching, retreats, and leadership training rooted in Scripture and delivered with conviction and clarity.</p>
+        <div class="topic-tags">
+          <span class="topic-tag">Gospel</span>
+          <span class="topic-tag">Discipleship</span>
+          <span class="topic-tag">Youth Faith</span>
+          <span class="topic-tag">Leadership</span>
+        </div>
+      </div>
+      <div class="audience-card reveal">
+        <span class="audience-num">03</span>
+        <span class="audience-icon">🏢</span>
+        <h3>Conferences &amp; Organizations</h3>
+        <p>Keynotes and workshops on purpose, leadership, and the power of intentional living — for educators, youth leaders, and community builders.</p>
+        <div class="topic-tags">
+          <span class="topic-tag">Leadership</span>
+          <span class="topic-tag">Motivation</span>
+          <span class="topic-tag">Community</span>
+          <span class="topic-tag">Empowerment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="program" id="program">
+  <div class="section-inner">
+    <div class="program-grid">
+      <div class="program-visual reveal">
+        <div class="program-card-main">
+          <div class="program-accent"></div>
+          <h3>Life on Purpose Program</h3>
+          <p>A structured mentoring experience designed to help teens discover who they are and why they're here.</p>
+          <ul class="program-outcomes">
+            <li>Social &amp; emotional intelligence development</li>
+            <li>Cooperative learning &amp; self-reflection</li>
+            <li>Voice discovery &amp; community leadership</li>
+            <li>Ikigai framework for purpose clarity</li>
+            <li>Arts-integrated improv adaptation available</li>
+          </ul>
+          <a href="#booking" class="btn-primary" style="background:white; color:#1A7FD4;">Bring This to Your School</a>
+        </div>
+        <div class="program-card-sub">
+          <span class="sub-icon">🎨</span>
+          <div class="sub-text">
+            <h4>Arts Edition Available</h4>
+            <p>8–12 week improv &amp; creativity adaptation for arts-focused schools and programs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="program-content reveal">
+        <div class="section-label"><span>Signature Program</span></div>
+        <h2 class="section-title">Teens Living <em>On Purpose.</em></h2>
+        <p>
+          The Life on Purpose Program isn't a one-day assembly. It's a sustained experience that walks teens through the questions that actually matter: Who am I? What do I love? What does the world need from me?
+        </p>
+        <p>
+          Through cooperative learning structures, guided self-reflection, and real conversation — not worksheets — participants leave with a clearer sense of identity and a concrete direction to move toward.
+        </p>
+        <p>
+          The program has been delivered in New York City schools, youth groups, and community organizations, with results that show up not in test scores, but in how students carry themselves after.
+        </p>
+        <div class="ikigai-note">
+          <p><strong>The Ikigai Framework</strong> — Built into the curriculum is the Japanese concept of Ikigai: the intersection of what you love, what you're good at, what the world needs, and what you can be paid for. Teens don't just learn about purpose. They locate it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-inner">
+    <div class="testimonials-header reveal">
+      <div class="section-label"><span>Testimonials</span></div>
+      <h2 class="section-title">Straight From the <em>Room.</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <span class="quote-mark">"</span>
+        <blockquote>I want to thank you so much for presenting us that life changing conversation. I felt an immediate difference in my life after hearing you speak. There are many things you taught that are so true but I've never realized before.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">SA</div>
+          <div>
+            <span class="author-name">Skyler Adelson</span>
+            <span class="author-role">Student, Age 16</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <span class="quote-mark">"</span>
+        <blockquote>Many of the students take lessons that they will use in the future. Some of these students have also become so moved that they will stay after class to have a personal discussion with him.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">LT</div>
+          <div>
+            <span class="author-name">Lyle T.</span>
+            <span class="author-role">Health Education Teacher</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <span class="quote-mark">"</span>
+        <blockquote>I really enjoyed the presentation, it really made me think about the different choices I made and the different choices I will be making towards my lifetime goal.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">KJ</div>
+          <div>
+            <span class="author-name">Kamarie Johnson</span>
+            <span class="author-role">Student, Age 15</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING CTA -->
+<section class="booking" id="booking">
+  <div class="section-inner">
+    <div class="booking-inner">
+      <span class="booking-eyebrow reveal">Book Godfrey Moye</span>
+      <h2 class="section-title reveal">Ready to Bring<br><em>This Message</em><br>to Your Room?</h2>
+      <p class="booking-desc reveal">
+        Whether you're a school principal, a youth pastor, or an event coordinator — Godfrey is ready to deliver an experience your audience won't forget. Reach out to check availability and get started.
+      </p>
+      <div class="booking-actions reveal">
+        <a href="https://calendly.com/moyespeaks" target="_blank" class="btn-primary">Schedule a Call</a>
+        <a href="mailto:godfrey@moyespeaks.com" class="btn-outline">Send an Email</a>
+      </div>
+      <div class="contact-row reveal">
+        <div class="contact-item">
+          📞 <a href="tel:3475435013">(347) 543-5013</a>
+        </div>
+        <div class="contact-item">
+          ✉️ <a href="mailto:godfrey@moyespeaks.com">godfrey@moyespeaks.com</a>
+        </div>
+        <div class="contact-item">
+          📍 New York City, NY
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MOYE<span>SPEAKS</span></div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#booking">Contact</a></li>
+  </ul>
+  <p>© 2026 Godfrey Moye · New York, NY</p>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
