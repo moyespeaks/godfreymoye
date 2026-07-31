@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Godfrey Moye</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --royal:#003594; --royal-deep:#001a47; --royal-dark:#000d2b;
+  --silver:#8b9599; --silver-mid:#6c767b; --silver-light:#c7ced1; --silver-chrome:#e8ecef;
+  --white:#fff; --paper:#f5f7f9; --mist:#eaeef1;
+  --ink:#0b1220;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  color:#fff;
+  background:var(--royal-dark);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+a{color:inherit;text-decoration:none}
+
+.noise{position:absolute;inset:0;z-index:1;opacity:.05;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.8) 1px,transparent 1px);background-size:3px 3px}
+.glow{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(199,205,208,.09),transparent 65%)}
+
+.wrap{position:relative;z-index:5;max-width:640px;margin:0 auto;padding:40px 24px;text-align:center}
+
+.brand{display:inline-flex;align-items:center;gap:12px;margin-bottom:64px}
+.brand-mark{width:34px;height:34px;border:2px solid var(--silver-light);border-radius:50%;display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:.7rem;color:var(--silver-light);letter-spacing:.02em}
+.brand-name{font-family:'Archivo Black',sans-serif;font-size:1.05rem;letter-spacing:.18em;color:#fff}
+.brand-name b{color:var(--silver-light)}
+
+.code{font-family:'Archivo Black',sans-serif;font-size:clamp(5rem,16vw,9rem);line-height:.9;letter-spacing:-.02em;color:var(--silver-light);margin-bottom:8px}
+.headline{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.3rem,3vw,1.8rem);color:rgba(232,236,239,.92);margin-bottom:22px;line-height:1.4}
+.sub{font-size:.95rem;line-height:1.7;color:rgba(232,236,239,.6);max-width:440px;margin:0 auto 44px}
+
+.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-radius:40px;transition:.3s;cursor:pointer}
+.btn-fill{background:var(--silver-light);color:var(--royal-dark)}
+.btn-fill:hover{background:#fff;transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(232,236,239,.45);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+
+@media(max-width:480px){
+  .brand{margin-bottom:48px}
+  .actions{flex-direction:column;align-items:stretch}
+}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="noise"></div>
+<div class="wrap">
+  <a href="/" class="brand">
+    <div class="brand-mark">GM</div>
+    <div class="brand-name">GODFREY<b>MOYE</b></div>
+  </a>
+  <div class="code">404</div>
+  <p class="headline">This page walked out of the room.</p>
+  <p class="sub">The page you're looking for doesn't exist — it may have moved, or the link might just be off. Let's get you back to somewhere useful.</p>
+  <div class="actions">
+    <a href="/" class="btn btn-fill">Back to Home</a>
+    <a href="/#booking" class="btn btn-ghost">Book Godfrey →</a>
+  </div>
+</div>
+</body>
+</html>
